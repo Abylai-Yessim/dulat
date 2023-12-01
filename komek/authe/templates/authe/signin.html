@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'back/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'back/css/authe.css' %}">
+  
+</head>
+<body>
+    <header class="header container">
+        {% for m in menu %}
+      <div class="header-logo">
+          <a href="{% url 'back:home' %}">{{ m.title }}</a>  
+      </div>
+      {% endfor %}
+      <span class="logo-span-authe">Служебная частная помощь</span>
+    <!-- <div class="button-group">
+        <i class="fa-regular fa-user" style="font-size: 24px; margin-left: 10px;"></i>
+        <a href="" class="button">Регистрация</a>
+        
+
+    </div> -->
+    </header>
+    
+
+  <section class="container page">
+    <div class="auth-form">
+            <h1>Авторизация</h1>
+            <form  action="" method="POST" class="authe-form" enctype="multipart/form-data">
+                {% csrf_token %}
+    
+                {{ form.as_p }}
+
+                    <button class="button" type="submit">Войти</button>
+                </fieldset>
+      </form>
+    </div>
+    
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'back/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header container">
+        {% for m in menu %}
+      <div class="header-logo">
+          <a href="{% url 'back:home' %}">{{ m.title }}</a>  
+      </div>
+        {% endfor %}
+      <span class="logo-span">Служебная частная помощь</span>
+      <div class="button-group">
+        <i class="fas fa-user" style="font-size: 24px; margin-left: 10px;"></i>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'authe:signout' %}" class="button ">Выход</a>
+        {% else %}
+            <a href="{% url 'authe:signup' %}" class="button ">Регистрация</a>
+            <a href="{% url 'authe:signin' %}" class="button ">Вход</a>
+        {% endif %}
+    </div>
+    </header>
+    {% block content %}
+
+    <div class="organs-list">
+        <h1>Список Органов:</h1>
+        <ul>
+            {% for organ in organs %}
+            <li class="organs">
+                <a href="{% url 'back:organ_detail' organ.id %}">{{ organ.title }}</a>
+                
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% endblock %}
+</body>
+</html>
