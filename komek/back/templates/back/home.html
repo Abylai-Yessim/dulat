@@ -19,12 +19,13 @@
       <div class="button-group">
         <i class="fas fa-user" style="font-size: 24px; margin-left: 10px;"></i>
         {% if request.user.is_authenticated %}
-            <a href="{% url 'authe:signout' %}" class="button ">Выход</a>
+            <a href="{% url 'back:moderator_notifications' %}" class="button">Moderator Notifications</a>
+            <a href="{% url 'authe:signout' %}" class="button">Logout</a>
         {% else %}
-            <a href="{% url 'authe:signup' %}" class="button ">Регистрация</a>
-            <a href="{% url 'authe:signin' %}" class="button ">Вход</a>
+            <a href="{% url 'authe:signup' %}" class="button">Registration</a>
+            <a href="{% url 'authe:signin' %}" class="button">Login</a>
         {% endif %}
-    </div>
+        </div>
     </header>
     {% block content %}
 

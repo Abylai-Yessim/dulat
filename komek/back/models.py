@@ -1,8 +1,7 @@
 from django.db import models
 import uuid
 import datetime
-from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser, Permission, Group
+
 from django.db import models
 
 
@@ -19,12 +18,13 @@ class Organ(models.Model):
         return self.title
 
 class Notification(models.Model):
+    organ = models.ForeignKey(Organ, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, default="")
-    address = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)  
     phone_number = models.CharField(max_length=100, default="")
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.organ.title} Notification"
+        return f"{self.name} - {self.organ.title}"
 
 

@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import Organ
+from .models import *
 
 admin.site.register(Organ)
+
+
