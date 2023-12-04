@@ -1,0 +1,98 @@
+.container-com {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.comment p {
+    margin: 0;
+    font-size: 22px;
+}
+
+.comment-form {
+    margin-left: 60px;
+    margin-top: 20px;
+    width: 30%;
+    height: 40%;
+}
+
+.comment-comment{
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical; 
+}
+
+.comment-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styling for user options */
+.user-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-options a {
+    margin: 5px 0;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.user-options a:hover {
+    text-decoration: underline;
+}
+
+.delete-button{
+    margin-left: 60%;
+    background-color: red;
+    padding: 6px 15px;
+    margin-top: -40px;
+    color: #fff;
+    border: none;
+}
+
+@media screen and (max-width: 600px) {
+    .container-com {
+        padding: 10px;
+    }
+
+    .comment-form textarea {
+        padding: 8px;
+    }
+
+    .comment-form button {
+        padding: 8px 12px;
+    }
+}

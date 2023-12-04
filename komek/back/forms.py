@@ -6,5 +6,10 @@ class NotificationForm(forms.ModelForm):
         model = Notification
         fields = ['organ', 'name', 'address', 'phone_number']
         widgets = {
-            'organ': forms.HiddenInput(),
+            'organ': forms.Select(),  
         }
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']

@@ -1,0 +1,111 @@
+/* Media query for screens with a width up to 400 pixels (phones) */
+@media only screen and (max-width: 400px) {
+    .header {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-logo {
+        margin-left: -10px;
+        width: 30%; 
+
+    }
+
+    .header-logo a {
+        font-size: 35px; 
+    }
+
+    .logo-span {
+        
+        margin-left: 55px;
+    }
+    
+    .button{
+        margin-left: -10px;
+    }
+
+    .moderator{
+        margin-left: -50%;
+    }
+
+  
+}
+
+/* Media query for screens with a width between 401 and 600 pixels (iPads) */
+/* Media query for screens with a width between 401 and 600 pixels (iPads) */
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    .header-logo a {
+        font-size: 40px; 
+    }
+
+    .button-group {
+        margin-right: 12%; 
+    }
+
+    .fa-user {
+        font-size: 20px; 
+        margin-right: 5px; 
+    }
+
+    .button {
+        font-size: 14px; 
+        padding: 6px 14px; 
+    }
+
+    .moderator{
+        margin-left: -30px;
+    }
+
+    .organs-list {
+        margin-left: 40px; 
+        margin-top: 25px; 
+        font-size: 24px; 
+    }
+
+    .organs-list a {
+        font-size: 34px;
+    }
+}
+
+/* Media query for screens with a width up to 600 pixels (phones and iPads) */
+@media only screen and (max-width: 600px) {
+    .header {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-logo {
+        margin-bottom: 0; 
+        margin-left: -40px; 
+    }
+
+    .logo-span {
+        font-size: 14px;
+    }
+
+    .button-group {
+        margin-top: 0;
+        margin-right: 10px; 
+        margin-left: -50%;
+    }
+
+    .fa-user {
+        margin-right: 5px; 
+        font-size: 10px; 
+    }
+
+    .button {
+        font-size: 13px;
+        padding: 6px 12px;
+        margin-right: 10px; 
+        
+    }
+    .moderator{
+        font-size: 10px;
+        padding: 6px 12px;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}

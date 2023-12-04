@@ -55,6 +55,7 @@ html {
     height: 130px;
     align-items: center;
     background-color: #fff;
+    margin-top: -10px;
 }
 .header-logo a{
     font-size: 50px;
@@ -68,10 +69,11 @@ html {
     margin-left: 10px;
     padding-left: 10px;
     color: #595d5a;
-    margin-right: 47%;
-    font-size: 18px;
+    margin-right: 58%;
+    font-size: 14px;
     padding: 5px;
 }
+
 .button-group {
     display: flex;
     align-items: center;
@@ -84,6 +86,17 @@ html {
     color: #074915;
 }
 
+.moderator{
+    background-color: #edf7ee;
+    border-radius: 4px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: #074915;
+    padding: 8px 20px;
+    margin-left: -30px;
+}
+
 .button {
     background-color: #edf7ee;
     border-radius: 4px;
@@ -94,6 +107,7 @@ html {
     color: #074915;
     white-space: nowrap;
     padding: 8px 20px;
+    margin-left: 10px;
 }
 
 /* .button:hover {
@@ -128,4 +142,28 @@ html {
     height: 8%;
     margin-left: 10%;
   
+}
+
+.user-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #074915;
+}
+
+.user-options {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.help a{
+    text-decoration: none;
+    color: #000;
+    margin-top: 10px;
+    margin-left: 40px;
 }

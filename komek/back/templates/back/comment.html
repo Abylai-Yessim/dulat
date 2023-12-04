@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'back/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'back/css/comment.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header container">
+
+      <div class="header-logo">
+          <a href="{% url 'back:home' %}">iKomek</a>  
+      </div>
+
+      <span class="logo-span">Служебная частная помощь</span>
+      <div class="button-group">
+        <a href="{% url 'back:moderator_notifications' %}" class="moderator">Модератор</a>
+        
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'authe:signout' %}" class="button">Выход</a>
+        {% else %}
+        <i class="fas fa-user" style="font-size: 24px; margin-left: 10px;"></i>
+        <div class="user-options" style="display: none;">
+            
+            <a href="{% url 'authe:signup' %}" class="button">Регистрация</a>
+            <a href="{% url 'authe:signin' %}" class="button">Вход</a>
+        </div>
+        {% endif %}
+        </div>
+    </header>
+    <div class="comment-section">
+        <h1 class="comment-comment">Комментарий</h1>
+           
+            {% for comment in comments %}
+                <div class="comment">
+                    <p>{{ comment.user.username }} - {{ comment.text }}</p>
+                    {% if comment.user == user or user.is_staff %}
+                        <form method="post" action="{% url 'back:delete_comment' comment.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Удалить комментарий</button>
+                        </form>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    
+    <!-- Comment form (display only if the user is authenticated) -->
+    {% if user.is_authenticated %}
+    <form class="comment-form" method="post" action="{% url 'back:comment' %}">
+        {% csrf_token %}
+       
+        {{ comment_form.as_p }}
+        <button type="submit">Оставить комментарий</button>
+    </form>
+    <br> 
+{% else %}
+    <p>Если вы хотите оставить комментарий, вам необходимо зарегистрироваться <a href="{% url 'authe:signin' %}">Войти</a> или <a href="{% url 'authe:signup' %}">Зарегистрироваться</a>.</p>
+{% endif %}
+
+
+</body>
+</html>

@@ -1,21 +1,22 @@
+<!-- moderator_notifications.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Moderator Notifications</title>
 </head>
 <body>
-    {% for notification in notifications %}
-        <li>
-            <strong>{{ notification.name }} - {% if notification.organ %}{{ notification.organ.title }}{% else %}No Organ{% endif %}</strong>
-            <br>
-            Address: {{ notification.address }}
-            <br>
-            Phone Number: {{ notification.phone_number }}
-            <br>
-            Timestamp: {{ notification.timestamp }}
-        </li>
-    {% endfor %}
+    <ul>
+        {% for notification in notifications %}
+            <li>
+                <strong>{{ notification.name }} - {% if notification.organ %}{{ notification.organ.title }} {{ notification.organ.description }}{% else %}No Organ{% endif %}</strong>
+                <br>
+                Адресс: {{ notification.address }}
+                <br>
+                Номер-телефона: {{ notification.phone_number }}
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
