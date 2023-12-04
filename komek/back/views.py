@@ -29,42 +29,29 @@ def home(request):
     return render(request, 'back/home.html', context=data)
 
 def organ_detail(request, organ_id):
-    try:
-        organ = Organ.objects.get(pk=organ_id)
-    except Organ.DoesNotExist:
-        raise Http404("Organ does not exist")
-
-    notification_form = NotificationForm(request.POST or None, initial={'organ': organ})
+    organ = Organ.objects.get(pk=organ_id)
+    notification_form = UserNotificationForm(request.POST or None, initial={'organ': organ})
 
     if request.method == 'POST' and notification_form.is_valid():
-        notification = notification_form.save()
-        messages.success(request, "Notification submitted successfully. A moderator will review it shortly.")
-        return redirect('back:app_notification')
+        notification_form.save()
+        messages.success(request, "Notification submitted successfully.")
+        return redirect('back:moderator_notifications')
 
     return render(request, 'back/organ_details.html', {'organ': organ, 'notification_form': notification_form})
 
 
-def notify_admin(request):
+def user_notification(request):
     if request.method == 'POST':
-        form = NotificationForm(request.POST)
+        form = UserNotificationForm(request.POST)
         if form.is_valid():
             notification = form.save(commit=False)
-            print(f"Notification created: {notification}")
-
+            notification.organ = Organ.objects.get(pk=1) 
             notification.save()
-
-            messages.success(request, "Notification submitted successfully.")
-            print("Redirecting to moderator_notifications")
-            return redirect('back:moderator_notifications')  
-        else:
-            print(f"Form errors: {form.errors}")
-            messages.error(request, "Form submission failed. Please check the errors.")
+            return redirect('back:app_notification')
     else:
-        form = NotificationForm()
+        form = UserNotificationForm()
 
-    organs = Organ.objects.all()
-    return render(request, 'back/app_notification.html', {'form': form, 'organs': organs})
-
+    return render(request, 'back/moderator_notifications.html', {'form': form})
 
 def thank_you_page(request):
     return render(request, 'back/app_notification.html')
@@ -72,8 +59,9 @@ def thank_you_page(request):
 def moderator_notifications(request):
     print("Inside moderator_notifications view")
     notifications = Notification.objects.all()
-    print("Notifications:", notifications)  # Check the printed output in your console
+    print("Notifications:", notifications)  # Проверьте вывод в консоли
     return render(request, 'back/moderator_notifications.html', {'notifications': notifications})
+
 
 class CommentDetail(DetailView):
     model = Organ

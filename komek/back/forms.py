@@ -1,13 +1,18 @@
 from django import forms
 from .models import *
+from django.core.validators import RegexValidator
 
-class NotificationForm(forms.ModelForm):
+class UserNotificationForm(forms.ModelForm):
+    phone_number = forms.CharField(validators=[RegexValidator(regex=r'^\d{10}$', message='Enter a valid phone number.')])
+
     class Meta:
         model = Notification
-        fields = ['organ', 'name', 'address', 'phone_number']
-        widgets = {
-            'organ': forms.Select(),  
-        }
+        fields = ['name', 'address', 'phone_number']
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
 
 class CommentForm(forms.ModelForm):
     class Meta:
