@@ -37,23 +37,39 @@
         {% endif %}
         </div>
     </header>
-    {% block content %}
-
-    <div class="organs-list">
-        <h1>Список Органов:</h1>
-        <ul>
-            {% for organ in organs %}
-            <li class="organs">
-                <a href="{% url 'back:organ_detail' organ.id %}">{{ organ.title }}</a>
-                
-            </li>
-            {% endfor %}
-        </ul>
+    <div class="content">
+        {% block content %}
+            <div class="organs-list">
+                <h1>Список Органов:</h1>
+                <ul>
+                    {% for organ in organs %}
+                        <li class="organs">
+                            <a href="{% url 'back:organ_detail' organ.id %}">{{ organ.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endblock %}
     </div>
-    {% endblock %}
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: contact@example.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+  
 
 
-    
+   
     <script src="{% static 'back/js/style.js' %}"></script>
 </body>
 </html>

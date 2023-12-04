@@ -8,7 +8,7 @@
 
     .header-logo {
         margin-left: -10px;
-        width: 30%; 
+        width: 20%; 
 
     }
 
@@ -17,8 +17,9 @@
     }
 
     .logo-span {
-        
-        margin-left: 55px;
+        margin-top: 70px;
+        border-left: none;
+        font-size: 12px;
     }
     
     .button{
@@ -58,13 +59,14 @@
     }
 
     .organs-list {
-        margin-left: 40px; 
+
         margin-top: 25px; 
         font-size: 24px; 
     }
 
     .organs-list a {
         font-size: 34px;
+        
     }
 }
 
@@ -83,6 +85,7 @@
 
     .logo-span {
         font-size: 14px;
+
     }
 
     .button-group {

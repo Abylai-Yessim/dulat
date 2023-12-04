@@ -28,6 +28,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     background-color: #f8f8f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 ol, ul {
 	list-style: none;
@@ -47,6 +50,9 @@ table {
 
 html {
     font-size: 16px;
+}
+.content {
+    flex: 1; 
 }
 .header {
     width: 100%;
@@ -69,8 +75,8 @@ html {
     margin-left: 10px;
     padding-left: 10px;
     color: #595d5a;
-    margin-right: 58%;
-    font-size: 14px;
+    margin-right: 45%;
+    font-size: 20px;
     padding: 5px;
 }
 
@@ -94,7 +100,7 @@ html {
     font-size: 16px;
     color: #074915;
     padding: 8px 20px;
-    margin-left: -30px;
+    margin-right: 20px;
 }
 
 .button {
@@ -117,14 +123,14 @@ html {
 .organs-list{
     margin-left: 80px;
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 300;
 }
 
 .organs-list a{
 
     text-decoration: none;
-    font-size: 38px;
+    font-size: 44px;
     font-weight: 500;
     color: #000;
     /* margin-top: 70px; */
@@ -166,4 +172,31 @@ html {
     color: #000;
     margin-top: 10px;
     margin-left: 40px;
+}
+
+.footer {
+    background-color: #008000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    text-decoration: none;
 }

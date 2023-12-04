@@ -1,14 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'back/css/organ_details.css' %}">
+
+    <title>{{ organ.title }}</title>
 </head>
 <body>
     {% block content %}
-    <h2>{{ organ.title }}</h2>
-    <p>{{ organ.description }}</p>
+    <h2 class="org-title">{{ organ.title }}</h2>
+    <p class="org-des">{{ organ.description }}</p>
 
     {% if messages %}
         <ul class="messages">
@@ -18,13 +21,13 @@
         </ul>
     {% endif %}
 
-    <h3>Сообщения для админа:</h3>
-    <form method="post" action="{% url 'back:app_notification' %}">
+    <h3 class="user-title">User Notification Form</h3>
+    <form method="post" action="{% url 'back:organ_detail' organ_id=organ.id %}">
         {% csrf_token %}
         {{ notification_form.as_p }}
-        <button type="submit">Вызов</button>
+        <button type="submit">Submit</button>
     </form>
-    
-{% endblock %}
+
+    {% endblock %}
 </body>
 </html>

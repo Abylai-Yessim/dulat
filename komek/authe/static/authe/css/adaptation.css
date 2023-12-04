@@ -1,0 +1,22 @@
+/* Media query for screens with a width up to 400 pixels (phones) */
+@media only screen and (max-width: 400px) {
+    .header {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-logo {
+        margin-left: -30px;
+        width: 50%; 
+    }
+
+    .header-logo a {
+        font-size: 35px; 
+    }
+    
+    .logo-span-authe{
+        font-size: 15px;
+    }
+  
+}

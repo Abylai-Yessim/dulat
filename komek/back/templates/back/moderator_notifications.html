@@ -1,20 +1,25 @@
-<!-- moderator_notifications.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'back/css/moderator.css' %}">
     <title>Moderator Notifications</title>
 </head>
 <body>
+    
+    <h2>Moderator Notifications</h2>
     <ul>
         {% for notification in notifications %}
             <li>
-                <strong>{{ notification.name }} - {% if notification.organ %}{{ notification.organ.title }} {{ notification.organ.description }}{% else %}No Organ{% endif %}</strong>
+                <strong>{{ notification.organ.title }} - {{ notification.organ.description }}</strong>:
                 <br>
-                Адресс: {{ notification.address }}
+                Имя- {{ notification.name }}:
                 <br>
-                Номер-телефона: {{ notification.phone_number }}
+                Адресс- {{ notification.address }}:
+                <br>
+                Номер-телефона- {{ notification.phone_number }}:
             </li>
         {% endfor %}
     </ul>
