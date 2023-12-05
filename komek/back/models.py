@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User  # Add this import
+from django.contrib.auth.models import User  
 import uuid
 
 def uniq_name_upload(instance, filename):
@@ -16,7 +16,8 @@ class Organ(models.Model):
 class Notification(models.Model):
     organ = models.ForeignKey(Organ, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, default="")
-    address = models.CharField(max_length=255)  
+    address = models.CharField(max_length=255) 
+    description = models.CharField(max_length=255, default="")  
     phone_number = models.CharField(max_length=100, default="")
     timestamp = models.DateTimeField(auto_now_add=True)
 

@@ -21,11 +21,11 @@
         </ul>
     {% endif %}
 
-    <h3 class="user-title">User Notification Form</h3>
+    <h3 class="user-title">Сообщения пользователя</h3>
     <form method="post" action="{% url 'back:organ_detail' organ_id=organ.id %}">
         {% csrf_token %}
         {{ notification_form.as_p }}
-        <button type="submit">Submit</button>
+        <button type="submit">Отправить</button>
     </form>
 
     {% endblock %}

@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <h2>Moderator Notifications</h2>
+    <h2>Модератор сообщений</h2>
     <ul>
         {% for notification in notifications %}
             <li>
@@ -20,6 +20,8 @@
                 Адресс- {{ notification.address }}:
                 <br>
                 Номер-телефона- {{ notification.phone_number }}:
+                <br>
+                Сообщения- {{ notification.description }}:
             </li>
         {% endfor %}
     </ul>

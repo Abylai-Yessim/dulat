@@ -11,7 +11,9 @@
         width: 20%; 
 
     }
-
+    .footer-section-contact{
+        margin-left: -30px;
+    }
     .header-logo a {
         font-size: 35px; 
     }
@@ -19,7 +21,8 @@
     .logo-span {
         margin-top: 70px;
         border-left: none;
-        font-size: 12px;
+        font-size: 14px;
+        
     }
     
     .button{
@@ -29,12 +32,34 @@
     .moderator{
         margin-left: -50%;
     }
+    
+    .help a{
+        margin-left: -0px;
+        margin-left: 40px;
+    }
 
+    .organs-list {
+       
+        margin-top: 25px; 
+        font-size: 24px; 
+    }
+
+    .organs-list a {
+        font-size: 35px;
+        
+    }
+
+    .comment-form {
+        margin-left: 60px;
+        margin-top: 20px;
+        width: 70%;
+        height: 40%;
+    }
+   
+    
   
 }
 
-/* Media query for screens with a width between 401 and 600 pixels (iPads) */
-/* Media query for screens with a width between 401 and 600 pixels (iPads) */
 @media only screen and (min-width: 401px) and (max-width: 600px) {
     .header-logo a {
         font-size: 40px; 
@@ -59,7 +84,7 @@
     }
 
     .organs-list {
-
+        
         margin-top: 25px; 
         font-size: 24px; 
     }
@@ -70,7 +95,6 @@
     }
 }
 
-/* Media query for screens with a width up to 600 pixels (phones and iPads) */
 @media only screen and (max-width: 600px) {
     .header {
         flex-direction: row; 
@@ -84,11 +108,16 @@
     }
 
     .logo-span {
-        font-size: 14px;
+        font-size: 16px;
+        margin-left: -5%; 
+        margin-top: 70px;
+        border-left: none;
 
     }
 
     .button-group {
+        display: flex;
+        align-items: center;
         margin-top: 0;
         margin-right: 10px; 
         margin-left: -50%;
@@ -99,16 +128,30 @@
         font-size: 10px; 
     }
 
-    .button {
+    .button,
+    .moderator {
         font-size: 13px;
         padding: 6px 12px;
         margin-right: 10px; 
-        
     }
-    .moderator{
-        font-size: 10px;
-        padding: 6px 12px;
+
+    .moderator {
         margin-left: 0;
-        margin-right: 10px;
+    }
+
+    .footer-section {
+        margin-left: -2px;
+    }
+
+    .help a {
+        margin-right: 60px;
+    }
+
+    .help {
+        margin-left: -30px;
+    }
+
+    .footer-section-contact {
+        margin-left: -30px;
     }
 }

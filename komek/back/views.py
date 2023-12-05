@@ -42,15 +42,15 @@ def organ_detail(request, organ_id):
             notification = notification_form.save(commit=False)
             notification.organ = organ  
             notification_form.save()
-            messages.success(request, "Notification submitted successfully.")
-            return redirect('back:thank_page')
+            messages.success(request, "Сообщение успешно отправлено.")
+            
     else:
         notification_form = UserNotificationForm(initial={'organ': organ})
 
     return render(request, 'back/organ_details.html', {'organ': organ, 'notification_form': notification_form})
 
-def thank_page(request):
-    return render(request, 'back/thank_page.html')
+# def thank_page(request):
+#     return render(request, 'back/thank_page.html')
 
 def moderator_notifications(request):
     notifications = Notification.objects.all()
@@ -67,7 +67,7 @@ class CommentDetail(DetailView):
         if organ_id:
             return super().get_object(queryset)
         else:
-            # Return a dummy Organ object (you can customize this)
+            
             return Organ()
 
     def get_context_data(self, **kwargs):
@@ -91,12 +91,11 @@ class CommentDetail(DetailView):
         if form.is_valid():
             comment = form.save(commit=False)
             
-            # Check if organ is not None before associating it with the comment
             if organ:
                 comment.organ = organ
             else:
-                # Handle the case where organ is None (you can customize this)
-                comment.organ = Organ.objects.get(pk=1)  # Use a default Organ instance or adjust as needed
+           
+                comment.organ = Organ.objects.get(pk=1) 
 
             comment.user = request.user if request.user.is_authenticated else None
             comment.save()
@@ -106,7 +105,6 @@ class CommentDetail(DetailView):
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
 
-    # Check if the user is the author of the comment or a staff member
     if comment.user == request.user or request.user.is_staff:
         comment.delete()
         return redirect('back:comment')

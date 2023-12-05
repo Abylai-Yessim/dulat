@@ -9,5 +9,5 @@ urlpatterns = [
     path('comment/', views.CommentDetail.as_view(), name='comment'),
     path('comment/delete/<int:comment_id>/', views.delete_comment, name='delete_comment'),
     path('moderator-notifications/', views.moderator_notifications, name='moderator_notifications'),
-    path('thank-page/', views.thank_page, name='thank_page'),
+    # path('thank-page/', views.thank_page, name='thank_page'),
 ]

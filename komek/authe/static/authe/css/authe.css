@@ -8,16 +8,20 @@
     font-size: 18px;
     padding: 5px;
 }
-.auth-form {
+/* .auth-form {
     width: 100%;
     max-width: 400px;
     margin: 50px auto 50px;
+} */
+.authe-form {
+    max-width: 400px;
+    margin: 0 auto;
 }
-
 .auth-form h1 {
     text-align: center;
     font-size: 36px;
     font-weight: 700;
+    color: #333;
 }
 
 .auth-form .fieldset {
@@ -34,6 +38,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .authe-form p{
@@ -81,4 +90,31 @@
 
 .sign-in{
     margin-left: 20%;
+}
+
+.fieldset {
+    margin-bottom: 15px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: #008000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #008000;
 }

@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
 </head>
 <body>
-    <div class="help">
-        <nav>
-            <a href="{% url 'back:comment' %}">Отзывы</a>
-        </nav> 
-      </div>
     <header class="header container">
         {% for m in menu %}
       <div class="header-logo">
@@ -23,7 +18,10 @@
         {% endfor %}
       <span class="logo-span">Служебная частная помощь</span>
       <div class="button-group">
-        <a href="{% url 'back:moderator_notifications' %}" class="moderator">Модератор</a>
+        
+        {% if request.user.username == 'joke' %}
+                    <a href="{% url 'back:moderator_notifications' %}" class="moderator">Модератор</a>
+        {% endif %}
         
         {% if request.user.is_authenticated %}
             <a href="{% url 'authe:signout' %}" class="button">Выход</a>
@@ -53,16 +51,21 @@
     </div>
     <footer class="footer">
         <div class="footer-content container">
-            <div class="footer-section">
+            <div class="help">
+                <nav>
+                    <a href="{% url 'back:comment' %}">Отзывы</a>
+                </nav> 
+              </div>
+            <div class="footer-section-contact">
                 <h3>Contact Us</h3>
-                <p>Email: contact@example.com</p>
-                <p>Phone: +1234567890</p>
+                <p>Email: zhakypber@gmail.ru</p>
+                <p>arsenshaker54@gmail.com</p>
+                <p>Phone: +7 777 274 5026</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
-                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/kanatbekul.y" class="social-icon"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>

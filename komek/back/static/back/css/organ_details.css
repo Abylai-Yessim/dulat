@@ -1,9 +1,25 @@
 body {
+    height: 100%;
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
 }
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-dess {
+    width: 70% ; 
+    height: 50% ;
+}
+
 
 header {
     background-color: #074915;
@@ -11,6 +27,7 @@ header {
     text-align: center;
     padding: 10px;
 }
+
 .org-title, .org-des, .user-title{
     margin-left: 50px;
 }
