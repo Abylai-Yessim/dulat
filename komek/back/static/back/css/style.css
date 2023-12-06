@@ -52,8 +52,10 @@ html {
     font-size: 16px;
 }
 .content {
-    flex: 1; 
+    flex: 1;
+ 
 }
+
 .header {
     width: 100%;
     display: flex;
@@ -120,26 +122,25 @@ html {
     background-color: green;
 } */
 
-.organs-list{
-    margin-left: 80px;
-    margin-top: 30px;
+.organs-list {
     font-size: 25px;
     font-weight: 300;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.organs-list a{
-
+.organs-list a {
     text-decoration: none;
     font-size: 44px;
     font-weight: 500;
     color: #000;
-    /* margin-top: 70px; */
 }
 
 .organs{
   
     display: inline-block;
     margin-top: 15px;
+    margin-right: 20px; 
 
 }
 

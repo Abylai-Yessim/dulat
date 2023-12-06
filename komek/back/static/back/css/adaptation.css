@@ -12,7 +12,7 @@
 
     }
     .footer-section-contact{
-        margin-left: -30px;
+        margin-left: -40px;
     }
     .header-logo a {
         font-size: 35px; 
@@ -35,7 +35,7 @@
     
     .help a{
         margin-left: -0px;
-        margin-left: 40px;
+        margin-left: 60px;
     }
 
     .organs-list {
@@ -53,8 +53,9 @@
         margin-left: 60px;
         margin-top: 20px;
         width: 70%;
-        height: 40%;
+        height: 50%;
     }
+   
    
     
   
@@ -140,7 +141,7 @@
     }
 
     .footer-section {
-        margin-left: -2px;
+        margin-left: -12px;
     }
 
     .help a {
@@ -148,10 +149,18 @@
     }
 
     .help {
-        margin-left: -30px;
+        margin-left: -50px;
     }
 
     .footer-section-contact {
-        margin-left: -30px;
+        margin-left: -60px;
     }
+
+    .comment-form {
+        margin-left: 60px;
+        margin-top: 20px;
+        width: 70%;
+        height: 50%;
+    }
+   
 }
